@@ -15,6 +15,7 @@ public class ItemsController {
     @RequestMapping("/test")
     public String test(Model model){
         System.out.println("查询一个");
+        System.out.println("nihao");
         Items item = service.findById(3);
         model.addAttribute("item",item);
         return "itemDetail";
