@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--配置ItemsDao的映射文件-->
+<mapper namespace="cn.LysGroup.dao.ItemsDao">
+    <resultMap id="ItemsMap" type="items">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="pic" column="pic"/>
+        <result property="createtime" column="createtime"/>
+        <result property="detail" column="detail"/>
+    </resultMap>
+    <select id="findById" parameterType="int" resultMap="ItemsMap">
+        select * from items where id=#{id};
+    </select>
+    <select id="findAll" resultMap="ItemsMap">
+        select * from items;
+    </select>
+</mapper>
